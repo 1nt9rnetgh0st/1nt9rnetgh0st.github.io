@@ -1,0 +1,22 @@
+---
+# Custom CSS for Chirpy Theme
+---
+
+@import "jekyll-theme-chirpy";
+
+/* 
+  To change the primary color, we override the HSL variables.
+  The Chirpy theme derives most colors from these.
+  Example: To make it more "Cyberpunk Neon Green"
+*/
+
+:root {
+  --main-hue: 50; /* Yellow hue */
+  --main-saturation: 80%;
+}
+
+/* 
+  If you want to specifically target light/dark mode:
+  html[data-mode='dark'] { ... }
+  html[data-mode='light'] { ... }
+*/
