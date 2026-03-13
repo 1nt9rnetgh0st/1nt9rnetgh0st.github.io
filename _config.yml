@@ -15,7 +15,11 @@ timezone:
 # ↓ --------------------------
 
 plugins:
-  - jekyll-theme-chirpy
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
 
 title: catonthemoon # the main title
 
