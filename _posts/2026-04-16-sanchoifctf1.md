@@ -82,7 +82,7 @@ Bài cung cấp cho ta một tài khoản, mình sẽ dùng **Burp suite** để
 ![image](https://hackmd.io/_uploads/Sk_0uT62be.png)
 Sau khi gửi ta thấy ứng dụng trả về thông báo `"ok":true` chứng tỏ request đã thành công và một JWT để xác thực. Mình decode JWT đó bằng [jwt.io](https://jwt.io)
 ![image](https://hackmd.io/_uploads/HyOIK66hZg.png)
-Ở đây mình sẽ thử kỹ thuật **JWT Algorithm Confusion attacks**. Trong kĩ thuật này ta sẽ thay đổi phần thuật toán ở Header của JWT để ép ứng dụng sử dụng loại mã hoá khác do ta chỉ định. Trong bài này, mình thay thuật toán thành `"none"` (không sử dụng thuật toán mã hoá nào), vậy JWT sẽ không còn phần secret nữa mà chỉ còn header và payload. Ta thay phần payload `role` từ `"user"` thành `"admin"` để truy cập. 
+Ở đây mình sẽ thử kỹ thuật **JWT Algorithm Confusion attacks**. Trong kĩ thuật này ta sẽ thay đổi phần thuật toán ở Header của JWT để ép ứng dụng sử dụng loại mã hoá khác do ta chỉ định. Trong bài này, mình thay thuật toán thành `"none"` (không sử dụng thuật toán mã hoá nào), vậy JWT sẽ không còn phần signature nữa mà chỉ còn header và payload. Ta thay phần payload `role` từ `"user"` thành `"admin"` và tạo JWT.
 ![image](https://hackmd.io/_uploads/rJgGjpph-e.png)
 Sau khi tạo JWT, truy cập vào `/api/admin/flag` với JWT đã tạo ta sẽ thành công lấy được flag. 
 ![image](https://hackmd.io/_uploads/ryyqopa2bg.png)
