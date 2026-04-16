@@ -1,8 +1,8 @@
 ---  
-title: "Picoctf 2026 "  
-date: 2026-04-14 +0700  
-categories: [CTF, General]  
-tags: [General skill, linux, picoctf, picoctf2026, ctf]
+title: "sanchoiFCTF1 Write-up"  
+date: 2026-04-16 +0700  
+categories: [CTF, Web, Pwn, FCTF]  
+tags: [ctf, web, pwn, sanchoi, FCTF]  
 ---
 
 Trong mini-test này có hai mảng là pwn và web. Trong đó mình đã hoàn thành được các bài:
