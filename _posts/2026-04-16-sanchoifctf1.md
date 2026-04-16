@@ -3,6 +3,9 @@ title: "sanchoiFCTF1 Write-up"
 date: 2026-04-16 +0700  
 categories: [CTF, Web, Pwn, FCTF]  
 tags: [ctf, web, pwn, sanchoi, FCTF]  
+image:
+  path: https://sanchoi.iahn.hanoi.vn/assets/fctf-logo.png
+  alt: "sanchoi FCTF"
 ---
 
 Trong mini-test này có hai mảng là pwn và web. Trong đó mình đã hoàn thành được các bài:
