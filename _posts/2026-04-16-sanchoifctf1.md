@@ -1,7 +1,7 @@
 ---  
 title: "sanchoiFCTF1 Write-up"  
 date: 2026-04-16 +0700  
-categories: [CTF, Web, Pwn, FCTF]  
+categories: [CTF-Writeups, FCTF, sanchoiFTCF1]  
 tags: [ctf, web, pwn, sanchoi, FCTF]  
 image:
   path: https://sanchoi.iahn.hanoi.vn/assets/fctf-logo.png
