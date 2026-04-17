@@ -14,7 +14,7 @@ Bài này yêu cầu sử dụng các lệnh trong linux để recover flag đã
 Tiếp theo, ta cần đảo ngược chuỗi - sử dụng lệnh `rev`
 Cuối cùng, ta cần thay đổi một số kí tự này thành kí tự khác và decode [ROT13](https://vi.wikipedia.org/wiki/ROT13), sử dụng lệnh `tr`.
 Đây là toàn bộ các bước mình làm để lấy flag
-```(bash)
+```bash
 nc foggy-cliff.picoctf.net 61262
 ===Welcome to the Text Transformations Challenge!===
 
@@ -59,7 +59,7 @@ Congratulations! You've recovered the original flag:
 ## Piece by Piece
 ![image](https://hackmd.io/_uploads/SJobdIsnWg.png)
 Đầu tiên, ta ssh vào challenges và thấy có các file sau
-```(bash)
+```bash
 ctf-player@pico-chall$ ls
 instructions.txt  part_aa  part_ab  part_ac  part_ad  part_ae
 ```
@@ -74,7 +74,7 @@ Hint:
 - After unzipping, check the extracted text file for the flag.
 ```
 Ta sẽ đưa tất cả các part đã bị zip thành một file zip và giải nén chúng
-```(bash)
+```bash
 ctf-player@pico-chall$ cat part* > flag
 ctf-player@pico-chall$ file flag
 flag: Zip archive data, at least v1.0 to extract
@@ -90,13 +90,13 @@ picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_28d309dc}
 ## SUDO MAKE ME A SANDWICH
 ![image](https://hackmd.io/_uploads/HyxlnUi3-e.png)
 Với bài này sau khi ssh vào thì ta thấy có một file flag.txt. Mình thử mở lên nhưng bị permission denied, mình thử dùng `ls -l` để check quyền thì thấy chỉ có user root hoặc trong group root mới có thể đọc được.
-```(bash)
+```bash
 ctf-player@challenge:~$ ls -l
 total 4
 -r--r----- 1 root root 31 Mar  9 21:32 flag.txt
 ```
 Mình thử dùng `sudo -l` để xem có thể dùng sudo để chạy quyền nào thì thấy có thể chạy một binary emacs.
-```(bash)
+```bash
 sudo -l
 Matching Defaults entries for ctf-player on challenge:
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
@@ -130,11 +130,11 @@ Nhưng có lẽ flag ở đây dã bị encoded url và shift vị trí các kí
 ## ABSOLUTE NANO
 ![image](https://hackmd.io/_uploads/S1servon-l.png)
 Bài này sau khi ssh vào thì ta lại thấy một file flag.txt nhưng chỉ root mới có quyền đọc. Thử `sudo -l` thì ta thấy có thể dùng `nano` để chỉnh sửa file `/etc/suoders`. Vậy ta sẽ dùng nano để chỉnh file /etc/suoders cho phép user hiện tại có thể sử dụng tất cả mọi lệnh với quyền sudo.
-```(bash)
+```bash
 ctf-player ALL=(ALL) NOPASSWD:ALL
 ```
 Sau đó dùng sudo đẻ đọc file flag.txt
-```(bash)
+```bash
 ctf-player@challenge:~$ sudo cat flag.txt
 picoCTF{n4n0_411_7h3_w4y_7a258d4b}
 ```
@@ -143,7 +143,7 @@ picoCTF{n4n0_411_7h3_w4y_7a258d4b}
 ![image](https://hackmd.io/_uploads/ryOg_Djhbe.png)
 
 Trong bài này có một load balencer đứng trước và 2 server đứng sau tạm gọi là A và B. Bình thường, server A không chứa sẽ được serve lên trước còn khi quá tải load balencer dẽ điều hướng qua server B chứa flag. Vậy ý tưởng ở đây là ta sẽ làm quá tải lưu lượng truy cập vào server A để được chuyển sang server B và lấy dược flag. Mình sẽ viết một script python liên tục truy cập vào làm quá tải và sau đó truy cập vào website để lấy flag.
-```(python)
+```python
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
