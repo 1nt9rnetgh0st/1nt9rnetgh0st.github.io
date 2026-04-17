@@ -1,7 +1,7 @@
 ---  
 title: "OverTheWire: Bandit - Full Walkthrough"  
 date: 2026-04-17 +0700  
-categories: [CTF, Linux, General]  
+categories: [CTF-Writeups, OverTheWire, Bandit]  
 tags: [Linux, OverTheWire, Network, Command, Write-up]
 image:
   path: https://hackmd.io/_uploads/BkJ0fSy6be.png
