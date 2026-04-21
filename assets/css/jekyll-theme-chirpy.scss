@@ -9,6 +9,18 @@
 ';
 
 /* append your custom style below */
-body {
-  background: gold
+#main-wrapper {
+  background: url('https://cdna.artstation.com/p/assets/images/images/057/440/342/large/rolando-strange-rolando-strange-br-green-light-001.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+.container {
+  background: rgba(20, 20, 20, 0.6) !important;
+}
+
+
+#panel-wrapper{
+  background: rgba(0, 0, 0, 0.4);
 }
