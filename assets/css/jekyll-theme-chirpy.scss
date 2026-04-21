@@ -10,7 +10,8 @@
 
 /* append your custom style below */
 #main-wrapper {
-  background: url('https://cdna.artstation.com/p/assets/images/images/057/440/342/large/rolando-strange-rolando-strange-br-green-light-001.jpg') !important;
+  background: linear-gradient(45deg, #1b1b1e, black, transparent),
+    url("https://cdna.artstation.com/p/assets/images/images/057/440/342/large/rolando-strange-rolando-strange-br-green-light-001.jpg") !important;
   background-attachment: fixed !important;
 }
 
