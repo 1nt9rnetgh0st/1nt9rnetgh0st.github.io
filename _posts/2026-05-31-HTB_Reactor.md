@@ -4,7 +4,7 @@ date: 2026-05-31 00:00:00 +0700
 categories: [Lab-Writeups, Hackthebox]
 tags: [Pentest, Red, Offensive , web, Lab, HTB] 
 image:
-  path: https://resources.hackthebox.com/meet-bh-eu-2023
+  path: https://resources.hackthebox.com/hubfs/HTB-Logo-1.png
   alt: "Hackthebox: Reactor"
 comments: true
 ---
